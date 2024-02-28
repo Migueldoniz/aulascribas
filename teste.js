@@ -63,8 +63,8 @@ const quadrados = numeros.map(function(numero,index){
 console.log(quadrados)
 
 const numerosfiltrados = numeros.filter(function(numero){
-    return numero > 10;
+    return numero > 3;
 })
 console.log(numerosfiltrados);
-const numerosfiltrados2 = numeros.filter(numero => numero > 10);
+const numerosfiltrados2 = numeros.filter(numero => numero > 3);
 console.log(numerosfiltrados2);
