@@ -68,3 +68,44 @@ const numerosfiltrados = numeros.filter(function(numero){
 console.log(numerosfiltrados);
 const numerosfiltrados2 = numeros.filter(numero => numero > 3);
 console.log(numerosfiltrados2);
+
+console.log(frutas.includes('maçã'));
+
+const pessoa = {
+    nome:"jao",
+    idade:30,
+    falar: function(){
+        console.log(`eai me chamo ${this.nome}`)
+    }
+};
+
+pessoa.falar()
+
+
+const carro = new Object();
+carro.marca = "Ford";
+carro.modelo = "Mustang";
+carro.ano = 1969;
+
+const numeromaximo = Math.max(...numeros)
+console.log(numeromaximo)
+
+function verificarusuario(usuario,callback){
+    const usuarios = ['a','b'];
+    const usuarioexiste = usuarios.includes(usuario);
+    if(usuarioexiste){
+        callback(null,`${usuario} existe no sistema`);
+    }
+    else{
+        callback("Usuario nao encontrado",null);
+    }
+}
+
+verificarusuario('aa', (erro,mensagem) => {
+    if(erro){
+        console.error(erro);
+    }
+    else{
+        console.log(mensagem);
+    }
+})
