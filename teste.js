@@ -109,3 +109,16 @@ verificarusuario('aa', (erro,mensagem) => {
         console.log(mensagem);
     }
 })
+
+const pessoa2 = {
+    name: 'Joao',
+    idade: 30,
+    cargo: "dever"
+};
+const {name, idade, cargo} = pessoa2;
+
+console.log(name);
+console.log(idade);
+console.log(cargo);
+
+const cores = ['azul','vermelho']
