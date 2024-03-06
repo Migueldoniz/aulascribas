@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "moguelteste",
+    "slug": "moguelteste",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
