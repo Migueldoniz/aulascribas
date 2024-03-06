@@ -15,6 +15,7 @@ export default function App() {
       <Componente3></Componente3>
       <Titulo texto="Esse eh o titulo"></Titulo>
       <Mensagem conteudo="Esse eh o conteudo"></Mensagem>
+      <Text>{somar(151818,2)}</Text>
     </View>
   );
 }
