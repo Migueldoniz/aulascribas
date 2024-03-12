@@ -1,9 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Button, StyleSheet, Text, View } from 'react-native';
 import {Componente,Componente2} from './componentes/componente';
 import {Titulo, Mensagem, somar} from './componentes/componentes'
-
+import ListaProdutos from './ListaProdutos'
+import produtos from './produtos';
+import produtos2 from './produtos2';
 
 export default function App() {
   return (
@@ -16,6 +18,17 @@ export default function App() {
       <Titulo texto="Esse eh o titulo"></Titulo>
       <Mensagem conteudo="Esse eh o conteudo"></Mensagem>
       <Text>{somar(151818,2)}</Text>
+      <Text>{'\n'}</Text>
+      <Button
+          title='clica'
+          onPress={() => {
+
+            produtos.map(p =>{
+                  <View><Text key={p.id}> {p.id} - {p.nome} - Valor:{p.preco}</Text></View>
+
+            })
+          }
+        }/>
     </View>
   );
 }
@@ -37,6 +50,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#ffaaab',
     alignItems: 'center',
     justifyContent: 'center',
+    height:30,
+  },
+  container1: {
+    flex: 1,
+    backgroundColor: '#AABBCC',
+    alignItems: 'center',
+    justifyContent: 'center',
+    height:70,
   },
 
   texto: {
