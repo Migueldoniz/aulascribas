@@ -6,8 +6,11 @@ import {Titulo, Mensagem, somar} from './componentes/componentes'
 import ListaProdutos from './ListaProdutos'
 import produtos from './produtos';
 import produtos2 from './produtos2';
+import MyButton from './componentes/MyButton';
+import Contador from './componentes/Contador';
 
 export default function App() {
+  const [mostrarmsg, setmostrarmsg] = React.useState(false);
   return (
     <View style={styles.container}>
       <Text style={styles.texto}>Bem vindo a aula de topicos</Text>
@@ -22,14 +25,16 @@ export default function App() {
       <Button
           title='clica'
           onPress={() => {
-
-            produtos.map(p =>{
-                  <View><Text key={p.id}> {p.id} - {p.nome} - Valor:{p.preco}</Text></View>
-
-            })
+              setmostrarmsg(!mostrarmsg)
           }
         }/>
+        {mostrarmsg && <ListaProdutos lista={produtos}/>}
+        <MyButton 
+        label = "Ok"
+        onClick= {() => {console.warn("Testando")}}/>
+        <Contador passo="2"></Contador>
     </View>
+    
   );
 }
 
