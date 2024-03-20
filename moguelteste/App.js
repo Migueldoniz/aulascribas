@@ -8,6 +8,8 @@ import produtos from './produtos';
 import produtos2 from './produtos2';
 import MyButton from './componentes/MyButton';
 import Contador from './componentes/Contador';
+import Alerta from './componentes/Alerta';
+import Pai from './componentes/Pai';
 
 export default function App() {
   const [mostrarmsg, setmostrarmsg] = React.useState(false);
@@ -33,6 +35,8 @@ export default function App() {
         label = "Ok"
         onClick= {() => {console.warn("Testando")}}/>
         <Contador passo="2"></Contador>
+        <Alerta></Alerta>
+        <Pai></Pai>
     </View>
     
   );
