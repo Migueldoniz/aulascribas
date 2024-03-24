@@ -3,36 +3,32 @@ import { Button, StyleSheet, Text, View } from 'react-native';
 import { Dimensions } from 'react-native';
 import Mybutton from './Mybutton';
 
-export default Telainicial = (props) => {
-    const chamar = () => {
-        console.warn("Teste")
-        props.funcao(false)
-    }
-    return(
-        <View style={styles.container}>
-                <View style={styles.divtitle}>
-                <Text style={styles.title}>Jogo</Text>
-                <Text style={styles.title}>da</Text>
-                <Text style={styles.title}>Memória</Text>
-                </View>
-                <Button
-                title="Fácil"
-                onPress={ () => {console.warn("Teste")
-                props.funcao(false)}}
-                />
-                <Mybutton
-                label="Médio"
-                
-                />
-                <Mybutton
-                label="Hardcore 😈"
-                dif="hardcore"
-                teste={ chamar}
-                />
-                
-            </View>
+export default Telainicial = ({alteraestado}) => {
+
+  return(
+          <View style={styles.container}>
+                  <View style={styles.divtitle}>
+                  <Text style={styles.title}>Jogo</Text>
+                  <Text style={styles.title}>da</Text>
+                  <Text style={styles.title}>Memória</Text>
+                  </View>
+                        <Button style={styles.divtitle}
+                        title="Fácil"
+                        onPress={() => alteraestado("facil")}>
+                        </Button>
+                        <Button
+                        title="Médio"
+                        onPress={() => alteraestado("medio")}>
+                        </Button>
+                        <Button
+                        title="Hardcore 😈"
+                        onPress={() => alteraestado("hardcore")}
+                        />              
+              </View>
+            
     )
-}
+    }
+
 
 const styles = StyleSheet.create({
     container: {

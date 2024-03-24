@@ -4,7 +4,7 @@ import { Text, TouchableHighlight, StyleSheet, Dimensions, TouchableOpacity } fr
 export default props => {
     if (props.dif == "hardcore"){
         return(
-            <TouchableOpacity onPress={() => {props.teste()}} activeOpacity={0.7}>
+            <TouchableOpacity onPress={() => {props.funcao()}} activeOpacity={0.7}>
                 <Text style={style.botaohard}>
                     {props.label}
                 </Text>
@@ -13,7 +13,7 @@ export default props => {
     }
     else{
         return(
-            <TouchableOpacity onPress={props.funcao} activeOpacity={0.7}>
+            <TouchableOpacity onPress={() => {props.funcao()}} activeOpacity={0.7}>
                 <Text style={style.botao}>
                     {props.label}
                 </Text>
