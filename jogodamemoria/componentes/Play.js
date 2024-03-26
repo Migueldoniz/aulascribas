@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
 import { Dimensions } from 'react-native';
 import Mybutton from './Mybutton';
@@ -6,60 +6,60 @@ var primos = [2,3,5,7,11,13,17,19,23,29,31,37]
 
 export default Play = ({dif}) => {
     console.warn(dif)
-    const [seq, setseq] = React.useState([]);    
-    const [gameOver, setGameOver] = React.useState(false);
-
+    const [seq, setseq] = useState([]);    
+    const [gameOver, setGameOver] = useState(true);
+    const [mostranum, setmostranum] = useState(true)
+    let numeros=['']
+    
     const gerarnum = (size,limit) => {
-        let numeros=[]
         for (let i=0;i<size;i++){
-          numeros.push(Math.floor(Math.random()*limit))
+        numeros.push(Math.floor(Math.random()*limit))
         }
-        setseq(numeros)
+        setTimeout(() => {
+            setmostranum(false);
+            numeros.pop()
+        }, 5000);
     }
 
-    useEffect(() => {
-        if (!gameOver) {
-        if (dif==="facil"){
+        if (dif==1){
             console.warn("to dentro do facil")
-
             for (let i=0;i<primos.length;i++){
-                gerarnum(5,primos[i])
+                gerarnum(1,primos[i])
                 console.warn(seq)
             }
+                
         }
-        else if (dif==="medio"){
+        else if (dif==2){
             for (let i=0;i<primos.size;i++){
                 gerarnum(primos[i],10)
             }
+
         }
-        else if (dif==="hardcore"){
+        else if (dif==3){
             for (let i=0;i<primos.size;i++){
                 gerarnum(primos[i],100)
             }
         }
-    }
-    }, [dif, gameOver]);
-    const handleInputChange = (text) => {
-        setUserInput(text);
-        if (text.length === 5) {
-            // Aqui você pode verificar a entrada do usuário
-            // e decidir se o jogo acabou ou se uma nova sequência deve ser gerada
-            // Por exemplo, comparar a entrada do usuário com seq
-            setGameOver(true); // Neste exemplo, definimos como verdadeiro para encerrar o jogo após uma entrada
-        }
+        while (gameOver){
+            return (
+                <>
+                    <View style={styles.container}>
+                        {mostranum &&  numeros.map((n, index) => (
+                            <Text style={styles.number} key={index}>{n}</Text>
+                            ))}
+                        <Text style={styles.digiteaseq}>Digite a sequência</Text>
+                        <TextInput style={styles.textinput}
+                        value={String.text}
+                        placeholder=" "/>
+                    </View>
+                    
+                </>
+                    )
+                    
+                }
     }
 
-        return (
-            <View style={styles.container}>
-                    {seq.map((n, index) => (
-                    <Text style={styles.number} key={index}>{n} </Text>
-                    ))}
-                <Text style={styles.digiteaseq}>Digite a sequência</Text>
-                <TextInput style={styles.textinput}
-                placeholder=" "/>
-            </View>
-           )
-    }
+    
    
 
 
@@ -88,8 +88,10 @@ const styles = StyleSheet.create({
         fontSize: 17
     },
     number: {
-        fontSize: 5,
-        color: 'white'
+        fontSize: 10,
+        color: 'white',
+        flex:1,
+
     }
     
 })

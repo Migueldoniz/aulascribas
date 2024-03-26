@@ -14,18 +14,17 @@ export default Telainicial = ({alteraestado}) => {
                   </View>
                         <Button style={styles.divtitle}
                         title="Fácil"
-                        onPress={() => alteraestado("facil")}>
+                        onPress={() => alteraestado(1)}>
                         </Button>
                         <Button
                         title="Médio"
-                        onPress={() => alteraestado("medio")}>
+                        onPress={() => alteraestado(2)}>
                         </Button>
                         <Button
                         title="Hardcore 😈"
-                        onPress={() => alteraestado("hardcore")}
+                        onPress={() => alteraestado(3)}
                         />              
               </View>
-            
     )
     }
 
