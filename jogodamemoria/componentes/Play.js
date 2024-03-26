@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
 import { Dimensions } from 'react-native';
 import Mybutton from './Mybutton';
+//define a razão a ser multiplicado o numero definido
 var primos = [2,3,5,7,11,13,17,19,23,29,31,37]
 
 export default Play = ({dif}) => {
@@ -12,21 +13,22 @@ export default Play = ({dif}) => {
     let numeros=['']
     
     const gerarnum = (size,limit) => {
+        console.warn(size)
         for (let i=0;i<size;i++){
         numeros.push(Math.floor(Math.random()*limit))
         }
         setTimeout(() => {
             setmostranum(false);
             numeros.pop()
-        }, 5000);
+        }, 2000);
     }
 
         if (dif==1){
+            let partida = 0 
+            let numero = Math.floor(Math.random() * primos.length);
             console.warn("to dentro do facil")
-            for (let i=0;i<primos.length;i++){
-                gerarnum(1,primos[i])
+                gerarnum(1,numero)
                 console.warn(seq)
-            }
                 
         }
         else if (dif==2){
@@ -44,9 +46,7 @@ export default Play = ({dif}) => {
             return (
                 <>
                     <View style={styles.container}>
-                        {mostranum &&  numeros.map((n, index) => (
-                            <Text style={styles.number} key={index}>{n}</Text>
-                            ))}
+                        {mostranum &&  <Text>{numeros}</Text>}
                         <Text style={styles.digiteaseq}>Digite a sequência</Text>
                         <TextInput style={styles.textinput}
                         value={String.text}

@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { Button, SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import {Componente,Componente2} from './componentes/componente';
 import {Titulo, Mensagem, somar} from './componentes/componentes'
 import ListaProdutos from './ListaProdutos'
@@ -10,6 +10,12 @@ import MyButton from './componentes/MyButton';
 import Contador from './componentes/Contador';
 import Alerta from './componentes/Alerta';
 import Pai from './componentes/Pai';
+import CompProp from './componentes/CompProp';
+import Card from './componentes/Card';
+import Familia from './componentes/Familia';
+import Membros from './componentes/Membros';
+import UsuarioLogado from './componentes/UsuarioLogado';
+import FlexBox from './componentes/FlexBox';
 
 export default function App() {
   const [mostrarmsg, setmostrarmsg] = React.useState(false);
@@ -18,9 +24,6 @@ export default function App() {
       <Text style={styles.texto}>Bem vindo a aula de topicos</Text>
       <StatusBar style="auto" />
       <Componente></Componente>
-      <Componente2></Componente2>
-      <Componente3></Componente3>
-      <Titulo texto="Esse eh o titulo"></Titulo>
       <Mensagem conteudo="Esse eh o conteudo"></Mensagem>
       <Text>{somar(151818,2)}</Text>
       <Text>{'\n'}</Text>
@@ -31,14 +34,26 @@ export default function App() {
           }
         }/>
         {mostrarmsg && <ListaProdutos lista={produtos}/>}
-        <MyButton 
-        label = "Ok"
-        onClick= {() => {console.warn("Testando")}}/>
-        <Contador passo="2"></Contador>
-        <Alerta></Alerta>
         <Pai></Pai>
+        <SafeAreaView style={styles.container}>
+            <CompProp>
+              <Text>oi</Text>
+            </CompProp>
+        </SafeAreaView>
+        <Card>
+          <Familia>
+            <Membros nome="moguel" sobrenome="da silva"></Membros>
+          </Familia>
+        </Card>
+        <SafeAreaView>
+          <UsuarioLogado usuario={{nome:'Lucas', email:'lucas@unesp.br'}}></UsuarioLogado>
+          <UsuarioLogado usuario={{nome:'Lucas'}}></UsuarioLogado>
+          <UsuarioLogado usuario={{}}></UsuarioLogado>
+
+
+        </SafeAreaView>
+        <FlexBox></FlexBox>
     </View>
-    
   );
 }
 

@@ -11,7 +11,7 @@ export const Titulo = ({ texto }) => (
 
 export const Mensagem = ({ conteudo }) => (
     <View>
-        <Text style={{fontSize: 24, fontWeigh: 18}}>{conteudo}</Text>
+        <Text style={{fontSize: 24, fontWeight: '500'}}>{conteudo}</Text>
     </View>
 );
 
