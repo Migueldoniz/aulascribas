@@ -5,6 +5,7 @@ import { Dimensions } from 'react-native';
 import Mybutton from './componentes/Mybutton';
 import Telainicial from './componentes/Telainicial'
 import Play from './componentes/Play';
+import Play2 from './componentes/Play2';
 
 export default function App() {
   const [mostrarTela, setmostrarTela] = React.useState(true);
@@ -18,7 +19,7 @@ export default function App() {
   return (
     <>
     {
-      mostrarTela ? <Telainicial alteraestado={alteraestado}></Telainicial> : <Play dif={dif}></Play>
+      mostrarTela ? <Telainicial alteraestado={alteraestado}></Telainicial> : <Play dif={dif} alteraestado={alteraestado}></Play>
     }
       
     </>

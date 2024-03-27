@@ -1,62 +1,81 @@
 import React, {useEffect, useState} from "react";
-import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Alert, Button, StyleSheet, Text, TextInput, View } from 'react-native';
 import { Dimensions } from 'react-native';
 import Mybutton from './Mybutton';
+import Play2 from "./Play2";
 //define a razão a ser multiplicado o numero definido
-var primos = [2,3,5,7,11,13,17,19,23,29,31,37]
+var primos = [7,11,13,17,19,23,29,31,37]
 
-export default Play = ({dif}) => {
-    console.warn(dif)
-    const [seq, setseq] = useState([]);    
-    const [gameOver, setGameOver] = useState(true);
+export default Play = (props) => {
+    console.warn(props.dif)
+    const [seq, setseq] = useState(3);    
+    const [gameOver, setGameOver] = useState(false);
     const [mostranum, setmostranum] = useState(true)
-    let numeros=['']
-    
-    const gerarnum = (size,limit) => {
-        console.warn(size)
-        for (let i=0;i<size;i++){
-        numeros.push(Math.floor(Math.random()*limit))
-        }
-        setTimeout(() => {
-            setmostranum(false);
-            numeros.pop()
-        }, 2000);
-    }
+    const [entrada, setEntrada] = useState(' ')
+    const confere = async (num) => {
+        console.warn(entrada)
+        console.warn(num)
+        if(num===entrada){
+            setseq(seq+1)
+            return(
+                Alert.alert(
+                    'Voce acertou!'
+                )
 
-        if (dif==1){
+            )
+        }
+        else{
+            setGameOver(true)
+            dif.alteraestado(0)
+            return(
+                Alert.alert(
+                    'Voce errou!'
+                )
+                
+            )
+        }
+    }
+        if (props.dif==1){
+            while (!gameOver){
+                return (
+                    <>
+                        <View style={styles.container}>
+                            <Play2
+                            qtdNumeros={seq}
+                            func={setEntrada}
+                            ></Play2>
+                            <Text style={styles.digiteaseq}>Digite a sequência</Text>
+                            <TextInput style={styles.textinput}
+                            onChangeText={setEntrada}
+                            keyboardType="numeric"
+                            placeholder=" "/>
+                            <Button
+                            title="OK"
+                            onPress={confere}
+                            >
+                            
+                            </Button>
+                        </View>
+                        
+                    </>
+                        )
+                        
+                    }
+                
+        }
+        else if (props.dif==2){
             let partida = 0 
             let numero = Math.floor(Math.random() * primos.length);
             console.warn("to dentro do facil")
-                gerarnum(1,numero)
+                gerarnum(1)
                 console.warn(seq)
-                
-        }
-        else if (dif==2){
-            for (let i=0;i<primos.size;i++){
-                gerarnum(primos[i],10)
-            }
 
         }
-        else if (dif==3){
+        else if (props.dif==3){
             for (let i=0;i<primos.size;i++){
                 gerarnum(primos[i],100)
             }
         }
-        while (gameOver){
-            return (
-                <>
-                    <View style={styles.container}>
-                        {mostranum &&  <Text>{numeros}</Text>}
-                        <Text style={styles.digiteaseq}>Digite a sequência</Text>
-                        <TextInput style={styles.textinput}
-                        value={String.text}
-                        placeholder=" "/>
-                    </View>
-                    
-                </>
-                    )
-                    
-                }
     }
 
     
