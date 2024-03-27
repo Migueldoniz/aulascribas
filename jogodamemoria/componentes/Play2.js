@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { View, Text, StyleSheet, Dimensions } from 'react-native'
 
 export default Play2 = (props) => {
-    const [numero, setNumero] = useState(0);
+    const [numero, setNumero] = useState('');
     const [executou, setExecutou] = useState(false)
     let numstring = ""
 

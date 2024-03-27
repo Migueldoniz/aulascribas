@@ -12,11 +12,13 @@ export default Play = (props) => {
     const [gameOver, setGameOver] = useState(false);
     const [mostranum, setmostranum] = useState(true)
     const [entrada, setEntrada] = useState(' ')
-    const confere = async (num) => {
+
+    const confere = () => {
         console.warn(entrada)
-        console.warn(num)
-        if(num===entrada){
+        console.warn(mostranum)
+        if(mostranum===entrada){
             setseq(seq+1)
+            setGameOver(false)
             return(
                 Alert.alert(
                     'Voce acertou!'
@@ -25,8 +27,7 @@ export default Play = (props) => {
             )
         }
         else{
-            setGameOver(true)
-            dif.alteraestado(0)
+            props.alteraestado(0)
             return(
                 Alert.alert(
                     'Voce errou!'
@@ -42,7 +43,7 @@ export default Play = (props) => {
                         <View style={styles.container}>
                             <Play2
                             qtdNumeros={seq}
-                            func={setEntrada}
+                            func={setmostranum}
                             ></Play2>
                             <Text style={styles.digiteaseq}>Digite a sequência</Text>
                             <TextInput style={styles.textinput}

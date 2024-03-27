@@ -12,10 +12,14 @@ export default function App() {
   const [dif, setdif] = React.useState('');
 
   const alteraestado = (dif) => {
-    setmostrarTela(false)
-    setdif(dif)
+    if (dif===0){
+    setmostrarTela(true)
+    }
+    else{
+      setmostrarTela(false)
+      setdif(dif)
+    }
   }
-   
   return (
     <>
     {
@@ -25,6 +29,7 @@ export default function App() {
     </>
   );
 }
+
 
 const styles = new StyleSheet.create({
   textinput: {

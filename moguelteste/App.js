@@ -16,12 +16,13 @@ import Familia from './componentes/Familia';
 import Membros from './componentes/Membros';
 import UsuarioLogado from './componentes/UsuarioLogado';
 import FlexBox from './componentes/FlexBox';
+import Mega from './componentes/Mega';
 
 export default function App() {
   const [mostrarmsg, setmostrarmsg] = React.useState(false);
   return (
     <View style={styles.container}>
-      <Text style={styles.texto}>Bem vindo a aula de topicos</Text>
+      {/* <Text style={styles.texto}>Bem vindo a aula de topicos</Text>
       <StatusBar style="auto" />
       <Componente></Componente>
       <Mensagem conteudo="Esse eh o conteudo"></Mensagem>
@@ -49,10 +50,11 @@ export default function App() {
           <UsuarioLogado usuario={{nome:'Lucas', email:'lucas@unesp.br'}}></UsuarioLogado>
           <UsuarioLogado usuario={{nome:'Lucas'}}></UsuarioLogado>
           <UsuarioLogado usuario={{}}></UsuarioLogado>
-
+          <Mega></Mega>
 
         </SafeAreaView>
-        <FlexBox></FlexBox>
+        <FlexBox></FlexBox> */}
+        <Mega></Mega>
     </View>
   );
 }
