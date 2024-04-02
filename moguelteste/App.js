@@ -17,19 +17,25 @@ import Membros from './componentes/Membros';
 import UsuarioLogado from './componentes/UsuarioLogado';
 import FlexBox from './componentes/FlexBox';
 import Mega from './componentes/Mega';
+import { NavigationContainer } from '@react-navigation/native';
+import MyStack from './componentes/MyStack'
 
 export default function App() {
   const [mostrarmsg, setmostrarmsg] = React.useState(false);
   return (
-    <View style={styles.container}>
+    <>
+    <SafeAreaView style={{flex:1}}>
+      <NavigationContainer>
+        <MyStack></MyStack>
+      </NavigationContainer>
+    </SafeAreaView>
+    {/* <View style={styles.container}> */}
       {/* <Text style={styles.texto}>Bem vindo a aula de topicos</Text>
       <StatusBar style="auto" />
       <Componente></Componente>
       <Mensagem conteudo="Esse eh o conteudo"></Mensagem>
       <Text>{somar(151818,2)}</Text>
-      <Text>{'\n'}</Text>
-      <Button
-          title='clica'
+      <Text>{'\n'}</Text> {/* <View style={styles.container}>
           onPress={() => {
               setmostrarmsg(!mostrarmsg)
           }
@@ -54,8 +60,9 @@ export default function App() {
 
         </SafeAreaView>
         <FlexBox></FlexBox> */}
-        <Mega></Mega>
-    </View>
+        {/* <Mega></Mega>
+    </View> */}
+    </>
   );
 }
 
