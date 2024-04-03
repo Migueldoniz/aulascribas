@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text } from 'react-native'
+import { Button, Text, View } from 'react-native'
 import TextoCentral from './TextoCentral';
 import { StyleSheet } from 'react-native';
 import PassoStack from './PassoStack';
@@ -7,11 +7,16 @@ import PassoStack from './PassoStack';
 export default props => {
 
     return(
-        <PassoStack {...props} avancar='TelaB'>
+        <View>
             <TextoCentral corFundo = 'blue'>
                 Tela A
             </TextoCentral>
-        </PassoStack>
+            <Button
+                title="Ir para Tela B"
+                onPress={() => props.navigation.navigate('TelaB')}
+            />
+        </View>
+
     )
 }
 

@@ -19,6 +19,7 @@ import FlexBox from './componentes/FlexBox';
 import Mega from './componentes/Mega';
 import { NavigationContainer } from '@react-navigation/native';
 import MyStack from './componentes/MyStack'
+import Tab from './componentes/Tab';
 
 export default function App() {
   const [mostrarmsg, setmostrarmsg] = React.useState(false);
@@ -26,7 +27,7 @@ export default function App() {
     <>
     <SafeAreaView style={{flex:1}}>
       <NavigationContainer>
-        <MyStack></MyStack>
+        <Tab></Tab>
       </NavigationContainer>
     </SafeAreaView>
     {/* <View style={styles.container}> */}
