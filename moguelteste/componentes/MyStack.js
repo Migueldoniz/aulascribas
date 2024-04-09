@@ -14,8 +14,7 @@ export default props => (
 
         <Stack.Screen 
             name="TelaA" 
-            component={TelaA}
-            options={{ title: 'Informações Iniciais' }}>
+            component={TelaA}>
         </Stack.Screen>   
         <Stack.Screen name="TelaB">
             {props =>(

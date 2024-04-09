@@ -20,6 +20,7 @@ import Mega from './componentes/Mega';
 import { NavigationContainer } from '@react-navigation/native';
 import MyStack from './componentes/MyStack'
 import Tab from './componentes/Tab';
+import Drawer from './componentes/Drawer';
 
 export default function App() {
   const [mostrarmsg, setmostrarmsg] = React.useState(false);
@@ -27,7 +28,8 @@ export default function App() {
     <>
     <SafeAreaView style={{flex:1}}>
       <NavigationContainer>
-        <Tab></Tab>
+        {/* <Tab></Tab> */}
+        <Drawer></Drawer>
       </NavigationContainer>
     </SafeAreaView>
     {/* <View style={styles.container}> */}
