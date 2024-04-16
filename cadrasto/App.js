@@ -5,12 +5,14 @@ import UserList from './cadastro/UserList';
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { Button, Icon } from '@rneui/themed';
+import { UsersProvider } from './cadastro/UserContextFile';
 
 
 const Stack = createNativeStackNavigator()
 
 export default function App() {
   return (
+    <UsersProvider>
       <NavigationContainer>
         <Stack.Navigator
           initialRouteName='UserList'
@@ -39,6 +41,7 @@ export default function App() {
           />
         </Stack.Navigator>
       </NavigationContainer>
+    </UsersProvider>
   );
 }
 
