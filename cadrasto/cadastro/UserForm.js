@@ -49,7 +49,7 @@ export default ({route,navigation}) => {
 
 const style = StyleSheet.create({
     input: {
-        heigh: 40,
+        height: 40,
         borderColor: 'gray',
         borderWidth: 1,
         marginBottom: 10,
