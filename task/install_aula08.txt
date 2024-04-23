@@ -1,0 +1,15 @@
+instale todos pacotes da install_aula4.txt
+
+=> copiar pasta assets
+
+=> npm install react-native-gesture-handler
+cd ios && pod install
+
+=> npm install @react-native-async-storage/async-storage
+
+=> npm install moment
+=> npm install axios
+
+
+=> expo install @react-native-community/datetimepicker
+
