@@ -21,7 +21,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import MyStack from './componentes/MyStack'
 import Tab from './componentes/Tab';
 import Drawer from './componentes/Drawer';
-
+import RestaurantScreen from './componentesfirebase/RestaurantScreen'
 export default function App() {
   const [mostrarmsg, setmostrarmsg] = React.useState(false);
   return (
@@ -30,6 +30,7 @@ export default function App() {
       <NavigationContainer>
         {/* <Tab></Tab> */}
         <Drawer></Drawer>
+        <RestaurantScreen></RestaurantScreen>
       </NavigationContainer>
     </SafeAreaView>
     {/* <View style={styles.container}> */}

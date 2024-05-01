@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "874876418454",
+    "project_id": "testefirebase-83034",
+    "storage_bucket": "testefirebase-83034.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:874876418454:android:101e53229dda9fdbf5c5b7",
+        "android_client_info": {
+          "package_name": "com.moguelteste"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBseDDQySRV9W0dBvpyT_IxxorXHuidjNI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

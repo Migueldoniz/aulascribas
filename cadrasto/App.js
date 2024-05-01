@@ -55,13 +55,6 @@ export default function App() {
               }
             }}
           />
-          <Stack.Screen
-            name="UserForm"
-            component={UserForm}
-            options={{
-              title: 'Formulário de Usuários'
-            }}
-          />
         </Stack.Navigator>
       </NavigationContainer>
     </UsersProvider>
